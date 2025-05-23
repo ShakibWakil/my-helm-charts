@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Release.Name }}-deployment    # Example: my-nextjs-app-deployment
+  namespace: {{ .Release.Namespace }}  # ✅ Required for ArgoCD
   labels:
     app: {{ .Release.Name }}
 spec:
