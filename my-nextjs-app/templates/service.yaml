@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-service
+spec:
+  selector:
+    app: {{ .Release.Name }}               # Matches deployment label
+  ports:
+    - protocol: TCP
+      port: {{ .Values.service.port }}     # Exposed port
+      targetPort: 3000                     # Must match your app’s port
+  type: {{ .Values.service.type }}         # Can be ClusterIP, NodePort, or LoadBalancer
+
+
