@@ -8,8 +8,8 @@ service:
   port: 80 # Exposed service port (targetPort in app must match containerPort)
 resources:
   limits:
-    cpu: '0.5' # Max CPU allowed per container
-    memory: 512Mi # Max memory per container
+    cpu: '0.3' # Max CPU allowed per container
+    memory: 256Mi # Max memory per container
   requests:
-    cpu: '0.2' # Guaranteed CPU reservation
-    memory: 256Mi # Guaranteed memory reservation
+    cpu: '0.1' # Guaranteed CPU reservation
+    memory: 128Mi # Guaranteed memory reservation
